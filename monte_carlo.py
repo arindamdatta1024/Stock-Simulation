@@ -9,7 +9,7 @@ Discretized (what we actually simulate), for each time step dt:
     S_t+1 = S_t * exp( (mu - 0.5 * sigma^2) * dt + sigma * sqrt(dt) * Z )
 
 where Z ~ N(0, 1) is a random standard normal draw each step.
-The (mu - 0.5*sigma^2) term is the "drift correction" — it accounts for the
+The (mu - 0.5*sigma^2) term is the "drift correction", it accounts for the
 fact that log returns are being converted back to price levels
 (Ito's lemma / Jensen's inequality correction).
 """
