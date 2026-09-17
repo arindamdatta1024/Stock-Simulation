@@ -180,7 +180,10 @@ def plot_fan_chart(paths: np.ndarray, ticker: str, forecast_days: int, n_sample_
     ax.legend(loc="upper left")
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(f"{ticker}_fan_chart.png", dpi=150)
+    output_dir = Path("Plots")
+    output_file = output_dir / f"{ticker}_fan_chart.png"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output_file, dpi=150)
     print(f"\nSaved: {ticker}_fan_chart.png")
 
 
@@ -194,7 +197,10 @@ def plot_drawdown(price_series, ticker: str):
     ax.set_ylabel("Drawdown (%)")
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(f"{ticker}_drawdown.png", dpi=150)
+    output_dir = Path("Plots")
+    output_file = output_dir / f"{ticker}_drawdown.png"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output_file, dpi=150)
     print(f"Saved: {ticker}_drawdown.png")
 
 
@@ -209,7 +215,10 @@ def plot_garch_vs_constant(garch_sigma_path: np.ndarray, constant_sigma: float, 
     ax.legend()
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(f"{ticker}_garch_vs_constant_vol.png", dpi=150)
+    output_dir = Path("Plots")
+    output_file = output_dir / f"{ticker}_garch_vs_constant_vol.png"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output_file, dpi=150)
     print(f"Saved: {ticker}_garch_vs_constant_vol.png")
 
 
@@ -239,7 +248,10 @@ def plot_calibration(backtest_df, coverage_df, ticker: str):
     ax.legend()
 
     fig.tight_layout()
-    fig.savefig(f"{ticker}_calibration.png", dpi=150)
+    output_dir = Path("Plots")
+    output_file = output_dir / f"{ticker}_calibration.png"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output_file, dpi=150)
     print(f"Saved: {ticker}_calibration.png")
 
 
